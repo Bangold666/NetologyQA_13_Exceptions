@@ -9,4 +9,16 @@ public class Smartphone extends Product {
         super.name = smartphoneName;
         this.manufacturer = smartphoneManufacturer;
     }
+
+    @Override
+    public boolean matches(String search){
+        if (super.matches(search)){
+            return true;
+        }
+        if (this.manufacturer.contains(search)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

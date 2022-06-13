@@ -17,9 +17,8 @@ public class ProductManager {
         repository.deleteById(removeProductId);
     }
 
-    // метод определения соответствия товара по запросу search
     public boolean matches(Product product, String search) {
-        return product.getName().contains(search);
+        return product.matches(search);
     }
 
     public Product[] searchBy(String text) {
