@@ -2,7 +2,7 @@ package ru.netology.productmanager;
 
 public class NotFoundException extends RuntimeException {
 
-    public NotFoundException(String s){
+    public NotFoundException(String s) {
         super(s);
     }
 }

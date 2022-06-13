@@ -3,17 +3,17 @@ package ru.netology.productmanager;
 
 public class ProductManager {
 
-    private ProductRepository repository = new ProductRepository();
+    private final ProductRepository repository = new ProductRepository();
 
-    public void add(Product product){
+    public void add(Product product) {
         repository.save(product);
     }
 
-    public Product[] findAll(){
+    public Product[] findAll() {
         return repository.findAll();
     }
 
-    public void deleteById(int removeProductId){
+    public void deleteById(int removeProductId) {
         repository.deleteById(removeProductId);
     }
 
@@ -23,7 +23,7 @@ public class ProductManager {
 
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
-        for (Product product: repository.findAll()) {
+        for (Product product : repository.findAll()) {
             if (matches(product, text)) {
 
                 int length = result.length + 1;

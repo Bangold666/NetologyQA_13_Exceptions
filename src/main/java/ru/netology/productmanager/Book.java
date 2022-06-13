@@ -1,25 +1,21 @@
 package ru.netology.productmanager;
 
-public class Book  extends Product{
-   private String author;
+public class Book extends Product {
+    private final String author;
 
-   public Book (int bookId, String bookTitle,String bookAuthor){
-       super.id = bookId;
+    public Book(int bookId, String bookTitle, String bookAuthor) {
+        super.id = bookId;
 
-       super.name = bookTitle;
+        super.name = bookTitle;
 
-       this.author= bookAuthor;
-   }
+        this.author = bookAuthor;
+    }
 
     @Override
-    public boolean matches (String search){
-        if (super.matches(search)){
+    public boolean matches(String search) {
+        if (super.matches(search)) {
             return true;
         }
-        if (this.author.contains(search)){
-            return true;
-        } else {
-            return false;
-        }
+        return this.author.contains(search);
     }
 }

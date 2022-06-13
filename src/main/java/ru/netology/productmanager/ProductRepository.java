@@ -1,7 +1,5 @@
 package ru.netology.productmanager;
 
-import javax.lang.model.element.Element;
-
 public class ProductRepository {
     private Product[] products = new Product[0];
 
@@ -10,8 +8,8 @@ public class ProductRepository {
     }
 
     public void save(Product newProduct) {
-        if (products.length !=0){
-            if (findById(newProduct.getId()) != null){
+        if (products.length != 0) {
+            if (findById(newProduct.getId()) != null) {
                 throw new AlreadyExistsException("Element with id: " + newProduct + "not found");
             }
         }
@@ -30,7 +28,7 @@ public class ProductRepository {
 
     public void deleteById(int removeId) {
         if (products.length != 0) {
-            if (findById(removeId) == null){
+            if (findById(removeId) == null) {
                 throw new NotFoundException("Element with id: " + removeId + "not found");
             }
             Product[] tmp = new Product[products.length - 1];
